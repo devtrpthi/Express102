@@ -10,7 +10,7 @@ const  server = http.createServer((req,res) => {
   res.write(homePage)
   res.end()
    } else if(req.url == '/download.png') {
-  res.writeHead(200,{'content-type': 'text/html'})
+  res.writeHead(200,{'content-type': 'img/png'})
   //res.write('<h1> Hello world!</h1>')
   const homePage = fs.readFileSync('./download.png')
   res.write(homePage)
