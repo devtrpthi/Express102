@@ -1,3 +1,5 @@
+<meta http-equiv="Content-Security-Policy" content="default-src gap://ready file://* *; style-src 'self' http://* https://* 'unsafe-inline'; script-src 'self' http://* https://* 'unsafe-inline' 'unsafe-eval'">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 <script>
@@ -9,7 +11,8 @@
       name: 'Dev'
     }
   }) 
-  ourRequest.then((response) => {
+  ourRequest.then((response, statusCode, xmlhtpo) => {
     console.log(response)
+    console.log(xmlhtpo)
   })
 </script>
