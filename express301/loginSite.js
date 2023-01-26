@@ -66,6 +66,11 @@ app.get('/story/:storyId/:link',(req,res,next) => {
   res.send(`<h1>Story ${req.params.storyId} - ${req.params.link}</h1>`)
 })
 
+app.get('/statement', (req,res,next) => {
+  res.download(path.join(__dirname,'userStatements/BankStatementChequing.png'), 'test301.png')
+})
+
+
 app.get('/logout', (req,res,next) => {
   res.clearCookie('username')
   res.redirect('/login')
