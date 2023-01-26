@@ -52,9 +52,24 @@ app.get('/welcome', (req,res,next) =>{
 })
 })
 
+app.param('id',(req,res,next,id) => {
+  console.log('Params called:' ,id)
+  next()
+})
+
+
+app.get('/story/:storyId', (req,res,next) => {
+  res.send(`<h1>Story is ${req.params.storyId} </h1>`)
+})
+
+app.get('/story/:storyId/:link',(req,res,next) => {
+  res.send(`<h1>Story ${req.params.storyId} - ${req.params.link}</h1>`)
+})
+
 app.get('/logout', (req,res,next) => {
   res.clearCookie('username')
   res.redirect('/login')
 })
 
 app.listen(3000)
+console.log('server is listening u dumb fuck')
