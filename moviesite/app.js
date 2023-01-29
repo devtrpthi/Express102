@@ -11,6 +11,19 @@ var app = express();
 var helmet = require('helmet')
 app.use(helmet())
 
+//app.use(
+  //  helmet.contentSecurityPolicy({
+    //    directives: {
+      //       "defaultSrc": ['*', "'unsafe-inline'"],
+        //     "script-src": ['*', "'unsafe-inline'"],
+          //   "style-src": ['*', "'unsafe-inline'"],
+            //"font-src": safeToLoadFonts,
+            // "img-src": ['*', "'unsafe-inline'"],
+             //"form-action":[ '*', "'unsafe-inline'"]
+      //  },
+   // })
+//);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
