@@ -12,6 +12,16 @@ var app = express();
 const helmet = require('helmet')
 app.use(helmet())
 
+app.use((req,res,next) => {
+  if(req.query.api_key != 123456789){
+    res.status(401)
+    res.json('Invalid Api key')
+  }
+  else {
+    next()
+  }
+})
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
